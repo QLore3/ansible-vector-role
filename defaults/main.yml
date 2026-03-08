@@ -1,0 +1,10 @@
+---
+vector_version: "0.35.0"
+vector_install_dir: "/usr/bin"
+vector_config_dir: "/etc/vector"
+vector_config_file: "vector.toml"
+vector_service_name: "vector"
+clickhouse_host: "localhost"
+clickhouse_port: "8123"
+clickhouse_db: "logs"
+clickhouse_table: "logs"
