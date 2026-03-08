@@ -1,10 +1,9 @@
 ---
 galaxy_info:
-  author: Ilya 
+  author: Ilya
   description: Role for installing and configuring Vector log agent
   license: MIT
   min_ansible_version: "2.9"
-  
   platforms:
     - name: Ubuntu
       versions:
@@ -14,11 +13,9 @@ galaxy_info:
       versions:
         - bullseye
         - bookworm
-
   galaxy_tags:
     - monitoring
     - logging
     - vector
 
-dependencies:
-  - role: AlexeySetevoi.ansible-clickhouse
+dependencies: [] 
