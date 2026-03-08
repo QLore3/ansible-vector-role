@@ -1,0 +1,20 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  tasks:
+    - name: Check if Vector is installed
+      command: which vector
+      register: vector_installed
+      changed_when: false
+      failed_when: vector_installed.rc != 0
+
+    - name: Check if Vector config exists
+      stat:
+        path: /etc/vector/vector.toml
+      register: vector_config
+      failed_when: not vector_config.stat.exists
+
+    - name: Print verification results
+      debug:
+        msg: "Podman scenario checks passed for {{ inventory_hostname }}"
