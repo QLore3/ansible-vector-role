@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+platforms:
+  - name: ubuntu
+    image: ubuntu:22.04
+    command: sleep infinity
+    tty: true
+
+  - name: oraclelinux
+    image: oraclelinux:9
+    command: sleep infinity
+    tty: true
+
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      remote_tmp: /tmp/.ansible/tmp
+
+verifier:
+  name: ansible
+
+scenario:
+  name: default
+  test_sequence:
+    - converge

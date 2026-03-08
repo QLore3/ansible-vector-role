@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+
+    - name: Check vector installed
+      command: vector --version
+      register: vector_version
+      changed_when: false
+
+    - name: Assert vector installed
+      assert:
+        that:
+          - "'vector' in vector_version.stdout"
